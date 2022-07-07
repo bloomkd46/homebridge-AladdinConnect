@@ -5,18 +5,18 @@ name: Package
 on:
   release:
     types: [published]
-  
+
 jobs:
   publish:
-    runs-on: ubuntu-latest 
-    #permissions: 
-      #contents: read
-      #packages: write 
+    runs-on: ubuntu-latest
+    #permissions:
+    #contents: read
+    #packages: write
     steps:
       - uses: actions/checkout@v2
-        #with:
-            #persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-            #fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+      #with:
+      #persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+      #fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
       - name: Setup node file to publish to npm
         uses: actions/setup-node@v2
@@ -28,7 +28,7 @@ jobs:
         run: |
           x=`printf "### ${{ github.event.release.name }} \n"; echo "${{ github.event.release.body }}"; printf '\n\n'; cat CHANGELOG.md`
           echo "$x" > CHANGELOG.md
-        
+
       - name: Commit files
         #if: false == true
         id: commit
@@ -42,30 +42,30 @@ jobs:
              git commit -m "Updated Changelog" -a
              echo "::set-output name=push::true"
           fi
-          
+
       - name: Update Package Version
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"
           git add --all
-          npm version ${{ github.event.release.tag_name }}
+          npm version ${{ github.event.release.tag_name }} -f
           git tag -d v${{ github.event.release.tag_name }}
-          
+
       - name: Push changes
         #if: steps.commit.outputs.push == 'true'
         uses: ad-m/github-push-action@master
         with:
-           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Install Dependencies
         run: npm install
-        
+
       - name: Publish Beta to npm
         if: github.event.release.prerelease == true
         run: npm publish --tag=beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          
+
       - name: Publish to npm
         if: github.event.release.prerelease == false
         run: npm publish
