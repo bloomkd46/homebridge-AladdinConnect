@@ -29,7 +29,7 @@ export class AladdinConnectPlatform implements DynamicPlatformPlugin {
   /** this is used to track which accessories have been configured */
   //public readonly configuredAccessories: PlatformAccessory[] = [];
 
-  public readonly projectDir = path.join(this.api.user.storagePath(), '@bloomkd46/aladdinconnect');
+  public readonly projectDir = path.join(this.api.user.storagePath(), 'Aladdin Connect');
   public readonly generalLogPath = path.join(this.projectDir, 'General.log');
 
   public readonly time = () => {
