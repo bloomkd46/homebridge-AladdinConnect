@@ -1,7 +1,7 @@
 {
   "displayName": "Homebridge Aladdin Connect",
   "name": "homebridge-aladdinconnect",
-  "version": "1.0.1",
+  "version": "",
   "description": "A homebridge plugin to control Genie's Aladdin Connect garage doors.",
   "license": "Apache-2.0",
   "repository": {
