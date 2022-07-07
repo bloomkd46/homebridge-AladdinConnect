@@ -88,7 +88,7 @@ export default class GarageDoorAccessory extends Accessory {
         this.platform.api.updatePlatformAccessories([this.accessory]);
       }).catch(err => {
         this.log('error', 'Failed To Fetch Current Door State With Error:', err);
-        reject(reject(new this.StatusError(HAPStatus.SERVICE_COMMUNICATION_FAILURE)));
+        reject(new this.StatusError(HAPStatus.SERVICE_COMMUNICATION_FAILURE));
       });
     });
   }
@@ -133,7 +133,7 @@ export default class GarageDoorAccessory extends Accessory {
       case DesiredDoorStatus.OPEN:
         return TargetDoorState.OPEN;
       case DesiredDoorStatus.NONE:
-        return [DoorStatus.OPENING, DoorStatus.OPENING, DoorStatus.TIMEOUT_OPENING].includes(this.garageDoor.door.status) ?
+        return [DoorStatus.OPEN, DoorStatus.OPENING, DoorStatus.TIMEOUT_OPENING].includes(this.garageDoor.door.status) ?
           TargetDoorState.OPEN : TargetDoorState.CLOSED;
     }
   }
