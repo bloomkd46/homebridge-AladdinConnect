@@ -1,7 +1,8 @@
-import { GarageDoor } from 'aladdinconnect';
 import fs from 'fs';
 import { CharacteristicChange, HapStatusError, PlatformAccessory, Service } from 'homebridge';
 import path from 'path';
+
+import { GarageDoor } from '@bloomkd46/aladdinconnect';
 
 import { AladdinConnectPlatform } from '../platform';
 

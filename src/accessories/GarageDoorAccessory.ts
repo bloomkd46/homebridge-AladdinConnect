@@ -1,5 +1,6 @@
-import { DesiredDoorStatus, DoorStatus, GarageDoor } from 'aladdinconnect';
 import { CharacteristicChange, CharacteristicValue, HAPStatus, PlatformAccessory, Service } from 'homebridge';
+
+import { DesiredDoorStatus, DoorStatus, GarageDoor } from '@bloomkd46/aladdinconnect';
 
 import { AladdinConnectPlatform } from '../platform';
 import Accessory from './Accessory';

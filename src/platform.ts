@@ -1,7 +1,8 @@
-import Aladdin, { GarageDoor } from 'aladdinconnect';
 import fs from 'fs';
 import { API, APIEvent, Characteristic, DynamicPlatformPlugin, Logger, PlatformAccessory, PlatformConfig, Service } from 'homebridge';
 import path from 'path';
+
+import Aladdin, { GarageDoor } from '@bloomkd46/aladdinconnect';
 
 import GarageDoorAccessory from './accessories/GarageDoorAccessory';
 import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
@@ -28,7 +29,7 @@ export class AladdinConnectPlatform implements DynamicPlatformPlugin {
   /** this is used to track which accessories have been configured */
   //public readonly configuredAccessories: PlatformAccessory[] = [];
 
-  public readonly projectDir = path.join(this.api.user.storagePath(), 'AladdinConnect');
+  public readonly projectDir = path.join(this.api.user.storagePath(), '@bloomkd46/aladdinconnect');
   public readonly generalLogPath = path.join(this.projectDir, 'General.log');
 
   public readonly time = () => {
