@@ -34,7 +34,7 @@
   ],
   "dependencies": {
     "@homebridge/plugin-ui-utils": "^0.0.19",
-    "aladdinconnect": "^1.0.0"
+    "@bloomkd46/aladdinconnect": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^16.10.9",
