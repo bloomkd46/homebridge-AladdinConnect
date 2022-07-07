@@ -1,3 +1,8 @@
+### 0.1.1 
+* Fixed Time Showing In Logs As undefined
+* Fixed Garage Door Showing As Closing Once Opened
+
+
 ### 0.1.0 
 * Added Support For Invited Accounts (ex. Creating A Secondary Account Named Apple HomeKit)
 
