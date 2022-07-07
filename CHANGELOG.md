@@ -1,3 +1,7 @@
+### 0.1.0 
+* Added Support For Invited Accounts (ex. Creating A Secondary Account Named Apple HomeKit)
+
+
 ### 0.0.2 
 * Fixed Time Showing Up As Undefined In Logs
 
