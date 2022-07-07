@@ -1,0 +1,126 @@
+{
+  "pluginAlias": "AladdinConnectPlatform",
+  "pluginType": "platform",
+  "singular": true,
+  "customUi": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "required": true,
+        "default": "Aladdin Connect"
+      },
+      "email": {
+        "title": "Aladdin Connect Email",
+        "type": "string",
+        "required": true,
+        "placeholder": "email@example.com",
+        "description": "Email address used for your Aladdin Connect account.",
+        "format": "email",
+        "x-schema-form": {
+          "type": "email"
+        }
+      },
+      "password": {
+        "title": "Aladdin Connect Password",
+        "type": "string",
+        "required": true,
+        "placeholder": "password",
+        "description": "Password used for your Aladdin Connect account.",
+        "x-schema-form": {
+          "type": "password"
+        }
+      },
+      "batteryDetection": {
+        "title": "Include Battery Status",
+        "type": "boolean",
+        "required": false,
+        "default": true,
+        "description": "Whether Or Not To Include Garage Door Battery Status (If Supported By Device)"
+      },
+      "lowBatteryLevel": {
+        "title": "Low Battery Level",
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100,
+        "required": false,
+        "description": "Low battery level percent. Default 15",
+        "condition": {
+          "functionBody": "return model.batteryDetection ?? true"
+        }
+      },
+      "refreshInterval": {
+        "title": "Refresh Interval",
+        "type": "integer",
+        "minimum": 5,
+        "maximum": 60,
+        "required": false,
+        "description": "Normal status refresh interval, in seconds. Default: 12."
+      },
+      "activeRefreshInterval": {
+        "title": "Active Refresh Interval",
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 10,
+        "required": false,
+        "description": "Refresh interval in seconds to use once device state changes are detected. Default: 3."
+      },
+      "activeRefreshDuration": {
+        "title": "Active Refresh Duration",
+        "minimum": 5,
+        "maximum": 900,
+        "type": "integer",
+        "required": false,
+        "description": "Duration in seconds to use the Active Refresh Interval to query for additional device state changes. Default: 300."
+      },
+      "logLevel": {
+        "title": "Log Level",
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 4,
+        "default": 3,
+        "required": false,
+        "description": "0: None, 1: Door Stopped/Obstruction Detected, 2: Open/Close Events, 3: Opening/Closing Events, 4: Battery Level Updates"
+      }
+    }
+  },
+  "layout": [
+    {
+      "type": "section",
+      "title": "General Options",
+      "expandable": true,
+      "expanded": true,
+      "items": [
+        {
+          "description": "Enter your Aladdin Connect username and password below.",
+          "items": [
+            "name",
+            "email",
+            "password"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Advanced Settings (Optional)",
+      "expandable": true,
+      "expanded": false,
+      "items": [
+        {
+          "description": "These settings should be rarely used or needed by most people. Use these with caution.",
+          "items": [
+            "batteryDetection",
+            "lowBatteryLevel",
+            "refreshInterval",
+            "activeRefreshInterval",
+            "activeRefreshDuration",
+            "logLevel"
+          ]
+        }
+      ]
+    }
+  ]
+}
