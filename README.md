@@ -11,33 +11,33 @@ Homebridge plugin to integrate Genie's Aladdin Connect Devices into HomeKit
 
 [![npm](https://img.shields.io/npm/v/homebridge-aladdinconnect/latest?label=latest)](https://www.npmjs.com/package/homebridge-aladdinconnect)
 [![npm](https://img.shields.io/npm/v/homebridge-aladdinconnect/beta?label=beta)](https://github.com/bloomkd46/homebridge-AladdinConnect/wiki/Beta-Version)  
- 
+
 [![build workflow](https://github.com/bloomkd46/homebridge-AladdinConnect/actions/workflows/build.yml/badge.svg)](https://github.com/bloomkd46/homebridge-AladdinConnect/actions/workflows/build.yml)
 [![license](https://badgen.net/github/license/bloomkd46/homebridge-aladdinconnect)](/LICENSE)
 
-
 </span>
 
-### Plugin Information
+## Plugin Information
 
 - This plugin allows you to view and control Genie's Aladdin Connect System within HomeKit. This plugin:
   - downloads a device list
   - listens for real-time device updates
   - Reports Battery Level.
 
-## Features:
-  - [x] Easy Setup
-  - [x] Real-Time Device Updates
-  - [x] Device-By-Device Logs In Custom UI
-  - [x] Device-By-Device Info In Custom UI
-      
-## TODO:
-  - [ ] Verify Plugin
+## Features
+
+- [x] Easy Setup
+- [x] Real-Time Device Updates
+- [x] Device-By-Device Logs In Custom UI
+- [x] Device-By-Device Info In Custom UI
+
+## TODO
+
+- [ ] Verify Plugin
 
 ### Prerequisites
 
 - To use this plugin, you will need to already have [Homebridge](https://homebridge.io) (at least v1.3.5) or [HOOBS](https://hoobs.org) (at least v4) installed. Refer to the links for more information and installation instructions.
-
 
 ### Setup
 
