@@ -33,8 +33,8 @@
     "homebridge-plugin"
   ],
   "dependencies": {
-    "@homebridge/plugin-ui-utils": "^0.0.19",
-    "@bloomkd46/aladdinconnect": "^1.1.0"
+    "@bloomkd46/aladdinconnect": "^1.1.0",
+    "@homebridge/plugin-ui-utils": "^0.0.19"
   },
   "devDependencies": {
     "@types/node": "^16.10.9",
@@ -45,6 +45,7 @@
     "nodemon": "^2.0.19",
     "rimraf": "^3.0.2",
     "ts-node": "^10.3.0",
+    "typedoc": "^0.23.5",
     "typescript": "^4.4.4"
   }
 }
