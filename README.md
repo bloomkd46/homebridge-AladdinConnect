@@ -30,6 +30,7 @@ Homebridge plugin to integrate Genie's Aladdin Connect Devices into HomeKit
 - [x] Real-Time Device Updates
 - [x] Device-By-Device Logs In Custom UI
 - [x] Device-By-Device Info In Custom UI
+- [x] Supports Secondary Account
 
 ## TODO
 
