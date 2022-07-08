@@ -55,6 +55,9 @@ export default class GarageDoorAccessory extends Accessory {
       this.garageDoor.get().then(value => {
         this.service.updateCharacteristic(this.platform.Characteristic.ObstructionDetected, this.getObstructionDetected());
         this.service.updateCharacteristic(this.platform.Characteristic.TargetDoorState, this.getTargetDoorState());
+        this.batteryService?.updateCharacteristic(this.platform.Characteristic.StatusLowBattery,
+          (value[1].battery_level < (this.platform.config.lowBatteryLevel || 15)) ? 1 : 0);
+        this.batteryService?.updateCharacteristic(this.platform.Characteristic.BatteryLevel, value[1].battery_level);
 
         switch (value[1].status) {
           case DoorStatus.UNKNOWN:
