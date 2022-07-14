@@ -1,3 +1,7 @@
+### 1.0.0 
+Verified plugin 🎉
+
+
 ### 0.1.2 
 * Tweaked Battery Status To Auto-Update
 
