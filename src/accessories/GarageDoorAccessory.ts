@@ -36,15 +36,21 @@ export default class GarageDoorAccessory extends Accessory {
     //Automatically watch for changes
     let activeRefreshes = 0;
     setInterval(async () => {
-      const currentDoorState = await this.getCurrentDoorState();
-      if (currentDoorState !== this.lastCurrentState) {
-        activeRefreshes = 0;
+      if (activeRefreshes >= (this.platform.config.activeRefreshDuration || 300) / (this.platform.config.activeRefreshInterval || 3)) {
+        const currentDoorState = await this.getCurrentDoorState();
+        if (currentDoorState !== this.lastCurrentState) {
+          activeRefreshes = 0;
+        }
+        this.service.updateCharacteristic(this.platform.Characteristic.CurrentDoorState, currentDoorState);
       }
-      this.service.updateCharacteristic(this.platform.Characteristic.CurrentDoorState, currentDoorState);
     }, (this.platform.config.refreshInterval || 12) * 1000);
     setInterval(async () => {
-      if (activeRefreshes < (this.platform.config.activeRefreshDuration || 300) / (this.platform.config.activeRefreshInterval || 3)) {
-        this.service.updateCharacteristic(this.platform.Characteristic.CurrentDoorState, await this.getCurrentDoorState());
+      if (activeRefreshes <= (this.platform.config.activeRefreshDuration || 300) / (this.platform.config.activeRefreshInterval || 3)) {
+        const currentDoorState = await this.getCurrentDoorState();
+        if (currentDoorState !== this.lastCurrentState) {
+          activeRefreshes = 0;
+        }
+        this.service.updateCharacteristic(this.platform.Characteristic.CurrentDoorState, currentDoorState);
       }
       activeRefreshes++;
     }, (this.platform.config.activeRefreshInterval || 3) * 1000);
