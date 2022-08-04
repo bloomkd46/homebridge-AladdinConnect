@@ -1,3 +1,7 @@
+### 1.0.2 
+* Improved auto-refresh algorithm
+
+
 ### 1.0.1 
 * Fixed bug causing doors to be deleted on unsuccessful boot
 
