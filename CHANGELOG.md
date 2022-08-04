@@ -1,3 +1,7 @@
+### 1.0.1 
+* Fixed bug causing doors to be deleted on unsuccessful boot
+
+
 ### 1.0.0 
 Verified plugin 🎉
 
