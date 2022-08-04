@@ -7,6 +7,8 @@
 
 Homebridge plugin to integrate Genie's Aladdin Connect Devices into HomeKit
   
+
+[![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
 [![downloads](https://img.shields.io/npm/dt/homebridge-aladdinconnect)](https://npmcharts.com/compare/homebridge-aladdinconnect?log=true&interval=1&minimal=true)
 
 [![npm](https://img.shields.io/npm/v/homebridge-aladdinconnect/latest?label=latest)](https://www.npmjs.com/package/homebridge-aladdinconnect)
@@ -30,6 +32,7 @@ Homebridge plugin to integrate Genie's Aladdin Connect Devices into HomeKit
 - [x] Real-Time Device Updates
 - [x] Device-By-Device Logs In Custom UI
 - [x] Device-By-Device Info In Custom UI
+- [x] Supports Secondary Account
 
 ## TODO
 

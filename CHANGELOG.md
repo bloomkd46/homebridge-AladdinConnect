@@ -1,3 +1,11 @@
+### 1.0.0 
+Verified plugin 🎉
+
+
+### 0.1.2 
+* Tweaked Battery Status To Auto-Update
+
+
 ### 0.1.1 
 * Fixed Time Showing In Logs As undefined
 * Fixed Garage Door Showing As Closing Once Opened
