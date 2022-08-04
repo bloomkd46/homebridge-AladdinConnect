@@ -92,6 +92,7 @@ export class AladdinConnectPlatform implements DynamicPlatformPlugin {
     } catch (err) {
       this.log.error('Failed To Login With Error:', err);
       fs.appendFileSync(this.generalLogPath, `[${this.time()}] Error Encountered While Logging In: ${JSON.stringify(err)}\n`);
+      throw 'Setup Failed';
     }
     this.log.info(
       `Loaded ${this.cachedAccessories.length} ${this.cachedAccessories.length === 1 ? 'Accessory' : 'Accessories'} From Cache`,
