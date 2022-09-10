@@ -1,3 +1,7 @@
+### 1.1.0 
+*Improved UI
+
+
 ### 1.0.2 
 * Improved auto-refresh algorithm
 
